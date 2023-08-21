@@ -40,7 +40,7 @@ def desenhar_cobra(tamanho,pixels):
         pygame.draw.rect(fundo, verde, [pixel[0],pixel[1],tamanho,tamanho])
 
 def desenhar_pontuacao(pontuacao):
-    fonte= pygame.font.SysFont("Helvetica", 20)
+    fonte= pygame.font.SysFont("Helvetica", 15)
     texto = fonte.render (f"Pontos: {pontuacao}", True, branca)
     fundo.blit(texto, [1,1])
 
