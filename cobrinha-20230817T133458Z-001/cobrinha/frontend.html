@@ -2,38 +2,16 @@
 <html lang="en">
 
 <head>
-    <title>Cadastro de pessoa</title>
+    <title>Snake Game</title>
     <meta charset="UTF-8" />
 </head>
 
 <body>
 
-    <h4>Pessoas</h4>
-    <div id="pessoas"></div>
-
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid;
-        }
-    </style>
-    <table>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>pontos</th>
-            </tr>
-        </thead>
-        <tbody id="respiradores"></tbody>
-
-        </tbody>
-    </table>
-    <div id="respiradores"></div>
-
-    <h4>Pessoa novamente com tabela bonita implementada via div</h4>
+    <h1>Pontos das partidas</h1>
 
     <!-- https://wisdmlabs.com/blog/responsive-tables-using-css-div-tag/ -->
+
     <style>
         #resp-table {
             width: 100%;
@@ -42,20 +20,25 @@
 
         #resp-table-header {
             display: table-header-group;
-            background-color: gray;
+            background-color: green;
             font-weight: bold;
             font-size: 25px;
+            text-align: center;
+        
         }
 
         .table-header-cell {
             display: table-cell;
             padding: 10px;
             text-align: justify;
-            border-bottom: 1px solid black;
+            border: 1px solid black;
+            text-align: center;
         }
 
         #resp-table-body {
             display: table-row-group;
+            text-align: center;
+            border: 1px solid black;
         }
 
         .resp-table-row {
@@ -64,9 +47,12 @@
 
         .table-body-cell {
             display: table-cell;
+            border: 1px solid black;
+            padding: 10px;
         }
     </style>
-
+    <br>
+    <br>
     <div id="resp-table">
         <div id="resp-table-header">
             <div class="table-header-cell">id</div>
@@ -85,30 +71,17 @@
         </div>
     </div>
 
-    <h4>FIM</h4>
-    
-
-
     <!-- inclusão da biblioteca jquery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 
-    <script src="utils.js"></script>
+    <script src="java.js"></script>
 
     <script>
         // proteção para não executar o javascript antes do documento estar pronto
         $(function () {
 
             // chamadas à função genérica
-            // nome_classe, nome_div, lista_campos, elemento_html, html_antes, html_depois
-            listagem_generica("Pessoa", "pessoas", ['id', 'nome', 'email', 'telefone'], "<p>", "", " | ");
-            listagem_generica("Exame", "exames", ['id', 'nome', 'unidade', 'vr'], "<p>", "", " | ");
-            listagem_generica("ExameRealizado", "exames_realizados", ['id', 'data', 'resultado', 'pessoa.nome', 'exame.nome'], "<p>", "", " | ");
-
-            // respirador com tabela
-            listagem_generica("Respirador", "respiradores", ['id', 'codigo', 'data_aquisicao', 'data_emprestimo', 'pessoa.nome'], "<tr>", "<td>", "</td>");
-
-            // pessoa novamente com tabela bonita implementada via divs
-            listagem_generica("Pessoa", "resp-table-body", ['id', 'nome', 'email', 'telefone'], '<div class="resp-table-row">', '<div class="table-body-cell">', '</div>');
+            listagem_generica();
 
         });
     </script>
