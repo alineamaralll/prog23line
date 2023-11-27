@@ -1,5 +1,6 @@
 from backend.geral.config import *
 from backend.rotas.listar import *
+from backend.rotas.salvar_imagem import *
 
 # rota padrão
 @app.route("/")
